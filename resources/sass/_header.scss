@@ -1,0 +1,231 @@
+header {
+    .container {
+        max-width: 1400px;
+        display: flex;
+        background-color: $white;
+        .col {
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            border-right: 1px solid #E2E2E2;
+        }
+        .logo-container {
+            img {
+                width: 100%;
+                max-width: 150px;
+            }
+        }
+        .navigation-container {
+            flex-grow: 1;
+            nav {
+                width: 100%;
+                ul {
+                    display: flex;
+                    li {
+                        &:not(:last-child) {
+                            margin-right: 60px;
+                        }
+                        &:last-child {
+                            margin-left: auto;
+                        }
+                        &.has-children {
+                            position: relative;
+                            img {
+                                width: 20px;
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: -20px;
+                            }
+                        }
+                        a {
+                            color: #030304;
+                            font-size: 20px;
+                            transition: $transition;
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .notifications-container {
+            justify-content: center;
+            cursor: pointer;
+            i, svg {
+                color: #D8D8D8;
+                font-size: 20px;
+            }
+        }
+        .user-details-container {
+            justify-content: center;
+            color: #030304;
+            font-size: 20px;
+            cursor: pointer;
+            i, svg {
+                color: #D8D8D8;
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            img {
+                margin-left: 10px;
+                width: 20px;
+            }
+        }
+        .wallet-container {
+            background-color: $primary;
+            color: $white;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 30px;
+            font-family: $fontFamilySecondary;
+            img {
+                margin-left: 10px;
+                width: 30px;
+            }
+        }
+    }
+}
+
+.match-types-sub-menu-container {
+    display: inline-block;
+    // box-shadow: 0 6px 10px 0 rgba(0,0,0,0.11);
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.11));
+    ul {
+        width: 320px;
+        position: relative;
+        &:not(.grandchild) {
+            li {
+                border-right: 1px solid #E2E2E2;
+            }
+        }
+        &.child,
+        &.grandchild {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(100%);
+            transition: $transition;
+        }
+        &.grandchild {
+            li {
+                a {
+                    &:hover {
+                        & {
+                            background-color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+        li {
+            background-color: $white;         
+            &:hover {
+                & > ul {
+                    display: block;
+                }
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid #E2E2E2;
+            }
+            a {
+                font-size: 26px;
+                font-family: $fontFamilySecondary;
+                text-transform: uppercase;
+                line-height: 70px;
+                min-height: 80px;
+                padding: 10px 30px;
+                padding-left: 50px;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+                position: relative;
+                i, svg {
+                    margin-left: 10px;
+                    font-size: 20px;
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    opacity: 0;
+                    transition: $transition;
+                }
+                &:hover {
+                    color: $white;
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// BG Images
+
+.match-types-sub-menu-container {
+    ul {
+        li {
+            &.apex {
+                & > a {
+                    &:after {
+                        background-image: url('../img/apex-banner.png');
+                    }
+                }
+            }
+            &.duel {
+                & > a {
+                    &:after {
+                        background-image: url('../img/duel-banner.png');
+                    }
+                }
+            }
+            &.fifa {
+                & > a {
+                    &:after {
+                        background-image: url('../img/fifa-banner.png');
+                    }
+                }
+            }
+            &.fortnite {
+                & > a {
+                    &:after {
+                        background-image: url('../img/fortnite-banner.png');
+                    }
+                }
+            }
+            &.league {
+                & > a {
+                    &:after {
+                        background-image: url('../img/league-banner.png');
+                    }
+                }
+            }
+            &.match-making {
+                & > a {
+                    &:after {
+                        background-image: url('../img/match-making-banner.png');
+                    }
+                }
+            }
+            &.tournaments {
+                & > a {
+                    &:after {
+                        background-image: url('../img/tournaments-banner.png');
+                    }
+                }
+            }
+        }
+    }
+}

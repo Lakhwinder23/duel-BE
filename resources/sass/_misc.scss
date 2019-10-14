@@ -1,0 +1,41 @@
+.custom-label-value-container {
+    display: flex;
+    position: relative;
+    // box-shadow: 0 0 20px 0 rgba(0,0,0,0.08);
+    filter: drop-shadow(0 0px 20px rgba(0,0,0,.08));
+    .label-container, .action-container {
+        display: flex;
+        align-items: center;
+    }
+    .label-container {
+        margin-bottom: 0;
+        background-color: $white;
+        color: $fontColor;
+        font-size: 20px;
+        padding: 5px 15px;
+        border-right: 1px solid #EAEAEA;
+        &.primary {
+            background-color: $primary;
+            color: $white;
+            font-size: 30px;
+            font-family: $fontFamilySecondary;
+            text-transform: uppercase;
+        }
+    }
+    .action-container {
+        margin-bottom: 0;
+        background-color: $white;
+        color: $fontColor;
+        font-family: $fontFamily;
+        font-size: 20px;
+        padding: 15px 25px;
+        i, svg {
+            color: $primary;
+            cursor: pointer;
+        }
+        &.primary {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+}

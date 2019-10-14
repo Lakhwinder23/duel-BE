@@ -1,0 +1,107 @@
+.btn {
+    min-width: 135px;
+    min-height: 50px;
+    padding: 10px 20px;
+	display: inline-flex;
+	align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $fontFamilySecondary;
+    font-size: 24px;
+    transition: $transition;
+    border-radius: 0px;
+    cursor: pointer;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 71%, 94% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+	&.btn-primary {
+        background-color: $primary;
+        color: $white;
+		&:hover {
+            background-color: $secondary;
+        }
+	}
+	&.btn-secondary {
+        background-color: $secondary;
+        color: $white;
+		&:hover {
+            background-color: $primary;
+        }
+    }
+    &.full-width {
+        display: flex;
+    }
+}
+
+// .has-splice {
+//     position: relative;
+//     &:after {
+//         content: '';
+//         position: absolute;
+//     }
+//     &.bottom-right {
+//         margin-bottom: 60px;
+//         &:after {
+//             bottom: 0;
+//             right: 0;
+//             border-right: 15px solid $bodyBackgroundColor;
+//             border-top: 15px solid $primary;
+//         }
+//         &.white {
+//             &:after {
+//                 bottom: 0;
+//                 right: 0;
+//                 border-right: 15px solid $bodyBackgroundColor;
+//                 border-top: 15px solid $white;
+//             }
+//         }
+//         &.splice-primary {
+//             &:after {
+//                 bottom: 0;
+//                 right: 0;
+//                 border-right: 15px solid $bodyBackgroundColor;
+//                 border-top: 15px solid $primary;
+//                 transition: $transition;
+//             }
+//             &:hover {
+//                 &:after {
+//                     border-top: 15px solid $secondary;
+//                 }
+
+//             }
+//         }
+//     }
+//     &.bottom-left {
+//         margin-bottom: 60px;
+//         &:after {
+//             bottom: 0;
+//             left: 0;
+//             border-left: 15px solid $bodyBackgroundColor;
+//             border-top: 15px solid $primary;
+//         }
+//         &.white {
+//             &:after {
+//                 bottom: 0;
+//                 right: 0;
+//                 border-left: 15px solid $bodyBackgroundColor;
+//                 border-top: 15px solid $white;
+//             }
+//         }
+//     }
+// }
+
+.has-splice {
+    &.bottom-right {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    }
+    &.bottom-left {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+    }
+    &.top-right {
+        clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+    }
+    &.top-left {
+        clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%, 0 15px);
+    }
+}

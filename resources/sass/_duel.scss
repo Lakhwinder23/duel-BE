@@ -1,0 +1,99 @@
+.game-challenge-search-header {
+    background-image: url('../img/account-banner.png');
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .content {
+            width: 100%;
+            padding-right: 60px;
+            h1 {
+                color: $white;
+                font-size: 82px;
+                line-height: 70px;
+                margin-bottom: 35px;
+            }
+        }
+        .image {
+            img {
+                width: 100%;
+                max-width: 313px;
+                margin-left: auto;
+            }
+        }
+    }
+    @media(max-width: 768px) {
+        .container {
+            .content {
+                h1 {
+                    font-size: 62px;
+                    line-height: 54px;
+                }
+                .platform-selector {
+                    .label, .options {
+                        width: 50%;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .image {
+                img {
+                    max-width: 182px;
+                }
+            }
+        }
+    }
+    @media(max-width:585px) {
+        .container {
+            .content {
+                padding-right: 0;
+                text-align: center;
+                h1 {
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+                .platform-selector {
+                    .label, .options {
+                        width: 50%;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .image {
+                display: none;
+            }
+        }
+    }
+}
+
+.platform-selector {
+    display: flex;
+    position: relative;
+    .label, .options {
+        display: flex;
+        align-items: center;
+    }
+    .label {
+        margin-bottom: 0;
+        background-color: $white;
+        color: $primary;
+        font-size: 30px;
+        font-family: $fontFamilySecondary;
+        text-transform: uppercase;
+        padding: 5px 15px;
+    }
+    .options {
+        margin-bottom: 0;
+        background-color: $primary;
+        color: $white;
+        font-family: $fontFamily;
+        font-size: 20px;
+        padding: 15px 25px;
+        img {
+            width: 25px;
+            margin-left: 5px;
+        }
+    }
+}

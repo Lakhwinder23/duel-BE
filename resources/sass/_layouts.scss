@@ -1,0 +1,111 @@
+section, header, footer {
+	width: 100%;
+}
+
+section {
+    padding: $sectionPadding;
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1180px;
+	z-index: 1;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($primary, 0.8);
+	z-index: 0;
+	transition: $transition;
+}
+
+.margin-centered {
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.vertical-center {
+	align-items: center;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+.flex-grid {
+	width: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	// overflow: hidden;
+	&.no-wrap {
+		flex-wrap: nowrap;
+	}
+	&.cols-span-several-rows {
+		.col {
+			margin-bottom: $vert-spacing;
+		}
+	}
+	@for $i from 1 through $cols {
+		.col-#{$i} {
+			$c: $cols;
+			$g: $c*$c/100; // Ensure that if $grid-cols value changes, the gutters are even.
+			$width: percentage((100 / $cols) * $i/100);
+			$gutter: (($cols * $m) * ($cols - $i))/100/$g; // Create equal gutters.
+			flex: 0 0 calc(#{$width} - #{$gutter});
+			max-width: calc(#{$width} - #{$gutter});
+		}
+	}
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.flex-center-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.padded {
+	padding: $sectionPadding;
+}
+
+.relative {
+	position: relative;
+}
+
+.component-demos-nav-container {
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+}

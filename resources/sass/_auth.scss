@@ -1,0 +1,193 @@
+.auth-section {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    background-color: $white;
+    .col {
+        width: 50%;
+        &.form {
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            .inner {
+                width: 100%;
+                max-width: 340px;
+                h2 {
+                    font-size: 82px;
+                    line-height: 70px;
+                    margin-bottom: 35px;
+                }
+                .register-cta {
+                    margin-top: 20px;
+                    text-align: center;
+                }
+            }
+            .warning {
+                width: 100%;
+                max-width: 270px;
+                text-align: center;
+                opacity: 0.2;
+                color: $black;
+                font-size: 12px;
+                position: absolute;
+                bottom: 35px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &.image {
+            background-image: url('../img/duel-bg-image.jpg');
+            position: relative;
+            &:after {
+                content: '';
+                width: 65px;
+                height: 50%;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $white;
+                z-index: 1;
+            }
+            .social-login-container {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                background-color: $primary;
+                z-index: 2;
+                .header {
+                    border-bottom: 1px solid $white;
+                    color: $white;
+                    padding: 55px 17px;
+                }
+                .list {
+                    padding: 55px 17px;
+                    ul {
+                        li {
+                            text-align: center;
+                            &:not(:last-child) {
+                                margin-bottom: 55px;
+                            }
+                            a {
+                                i,svg {
+                                    color: $white;
+                                    font-size: 24px;
+                                    transition: $transition;
+                                    &:hover {
+                                        transform: scale(1.2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width: 768px) {
+        flex-wrap: wrap;
+        min-height: 0;
+        .col {
+            width: 100%;
+            &.image {
+                order: 1;
+                height: 430px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                &:after {
+                    bottom: 0;
+                    right: 0;
+                    left: auto;
+                    width: calc(100% - 533.3px);
+                    height: 95px;
+                }
+                .social-login-container {
+                    position: initial;
+                    display: flex;
+                    min-height: 70px;
+                    transform: initial;
+                    .header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        padding: 0px 15px;
+                        border-bottom: 0px;
+                        border-right: 1px solid $white;
+                    }
+                    .list {
+                        padding: 0px 125px;
+                        display: flex;
+                        align-items: center;
+                        ul {
+                            li {
+                                display: inline;
+                                margin-bottom: 0;
+                                &:not(:last-child) {
+                                    margin-right: 55px;
+                                }
+                            }
+                        }
+                    }                    
+                }
+            }
+            &.form {
+                order: 2;
+                padding: 105px 30px;
+                .inner {
+                    h2 {
+                        font-size: 62px;
+                        line-height: 50px;
+                    }
+                }
+                .warning {
+                    position: initial;
+                    transform: initial;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+    @media(max-width: 533.3px) {
+        .col {
+            &.image {
+                height: 250px;
+                &:after {
+                    width: calc(100% - 277.83px);
+                }
+                .social-login-container {
+                    .list {
+                        padding: 0 30px;
+                        ul {
+                            li {
+                                &:not(:last-child) {
+                                    margin-right: 30px;
+                                }
+                                a {
+                                    i, svg {
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.form {
+                padding: 50px 30px;
+                .inner {
+                    max-width: 265px;
+                    h2 {
+                        font-size: 40px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

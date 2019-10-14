@@ -1,0 +1,51 @@
+$transition: all linear 0.15s;
+
+$sectionPadding: 30px;
+$bottomMargin: 15px;
+
+$borderRadius: 6px;
+
+/* Vars for flex grid */
+$horz-spacing: 30px;
+$vert-spacing: 30px;
+$m: $horz-spacing;
+$cols: 12;
+
+/* Colors */
+// $bodyBackgroundColor: #F0F6FF;
+$bodyBackgroundColor: #F9F9F9;
+$primary: #D2223B;
+$secondary: #1D2BC5;
+$white: #FFF;
+$black: #000;
+$grey: #F6F6F6;
+$errorColor: #EE7979;
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Abel');
+$fontFamily: 'Abel', sans-serif;
+@import url('https://use.typekit.net/izg7idu.css');
+$fontFamilySecondary: alternate-gothic-no-1-d, sans-serif;
+
+$fontColor: #030304;
+$placeholderColor: rgba(64,73,94,0.66);
+
+$bodyFontSize: 18px;
+$h1Size: 62px;
+$h2Size: 42px; 
+$h3Size: 30px;
+$h4Size: 24px;
+$h5Size: $bodyFontSize;
+$h6Size: $bodyFontSize;
+
+$bodyFontLineHeight: 1.5em;
+$h1LineHeight: 1.5em;
+$h2LineHeight: 1.5em;
+$h3LineHeight: 1.5em;
+$h4LineHeight: 1.5em;
+$h5LineHeight: 1.5em;
+$h6LineHeight: 1.5em;
+
+$fontThin: 400;
+$fontRegular: 500;
+$fontBold: 600;

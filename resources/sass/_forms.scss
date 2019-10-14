@@ -1,0 +1,663 @@
+form {
+    position: relative;
+    margin-bottom: 0;
+	input, select, textarea {
+        display: block;
+		width: 100%;
+		border: none;
+		outline: none;
+        margin-bottom: 15px;
+        width: 100%;
+        background-color: #F9FAFF;
+        border: 1px solid #E0E7FF;
+        border-radius: 5px;
+        outline: none;
+        box-sizing: border-box;
+        transition: $transition;
+        padding: 0px 15px;
+        height: 40px;
+        font-family: $fontFamily;
+        color: $fontColor;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    textarea {
+        min-height: 125px;
+        padding: 10px 15px;
+        resize: none;
+    }
+    select {
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+    }
+    input {
+        &[type="submit"] {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 0;
+            margin-top: 10px;
+            border: none;
+            min-height: 50px;
+        }
+        &::placeholder {
+            color: $placeholderColor;
+            opacity: 0.5;
+            font-weight: $fontBold;
+            font-size: 18px;
+            
+        }
+        
+        &:-ms-input-placeholder {
+            color: $placeholderColor;
+            opacity: 0.5;
+            font-weight: $fontBold;
+            font-size: 18px;
+        }
+        
+        &::-ms-input-placeholder {
+            color: $placeholderColor;
+            opacity: 0.5;
+            font-weight: $fontBold;
+            font-size: 18px;
+        }
+    }
+}
+
+.form-group {
+    .label-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        label {
+            color: $fontColor;
+            opacity: 0.66;
+            font-size: 17px;
+            letter-spacing: 1.59px;
+        }
+        span,
+        span a {
+            color: #B0BAC9;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: $transition;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.custom-checkbox {
+    label {
+        display: block;
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: left;
+        color: $fontColor;
+        font-size: $bodyFontSize;
+        a {
+            color: $primary;
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            &:checked ~ .checkmark:after {
+                display: block;
+            }
+            &:checked ~ .checkmark {
+                background: $primary;
+            }
+        }
+        .checkmark {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background: #F9FAFF;
+            border: 1px solid #E0E7FF;
+            border-radius: 5px;
+            &:after {
+                content: '';
+                position: absolute;
+                display: none;
+                left: 8px;
+                top: 4px;
+                width: 2px;
+                height: 6px;
+                border: solid $white;
+                border-width: 0 2px 2px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.custom-date-selector {
+    display: flex;
+    position: relative;
+    .label-container, .date-selector {
+        display: flex;
+        align-items: center;
+    }
+    .label-container {
+        margin-bottom: 0;
+        background-color: $white;
+        color: $primary;
+        font-size: 30px;
+        font-family: $fontFamilySecondary;
+        text-transform: uppercase;
+        padding: 5px 15px;
+    }
+    .date-selector {
+        margin-bottom: 0;
+        background-color: $primary;
+        color: $white;
+        font-family: $fontFamily;
+        font-size: 20px;
+        padding: 15px 25px;
+        img {
+            width: 25px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.datepicker {
+    padding: 20px;
+    direction: ltr;
+    width: 100%;
+    background-color: $white;
+    // box-shadow: 0 5px 10px 0 rgba(0,0,0,0.07);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,.07));
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    left: 0;    
+}
+
+.datepicker table {
+    margin: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.datepicker tr {
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.datepicker {
+    tr {
+        th {
+            &.prev,
+            &.next {
+                img {
+                    width: 28px;
+                    margin: 0 auto;
+                }
+            }
+            &.prev {
+                img {
+                    transform: rotate(90deg);
+                }
+            }
+            &.next {
+                img {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+}
+
+.datepicker td,
+.datepicker th {
+    text-align: center;
+    padding: 20px;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    border-radius: $borderRadius;
+    border: none;
+    color: $primary;
+}
+
+.datepicker table tr td.day.focused,
+.datepicker table tr td.day:hover,
+.datepicker table tr td .month.focused,
+.datepicker table tr td .month:hover {
+    background: #f5f5f5;
+    cursor: pointer
+}
+
+.datepicker table tr td.new,
+.datepicker table tr td.old,
+.datepicker table tr td span.new,
+.datepicker table tr td span.old {
+    color: $primary;
+}
+
+.datepicker table tr td span {
+    display: block;
+    width: 23%;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 1%;
+    cursor: pointer;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    border-radius: $borderRadius
+}
+
+.datepicker .datepicker-switch {
+    width: 145px
+}
+
+.datepicker .datepicker-switch,
+.datepicker .next,
+.datepicker .prev,
+.datepicker tfoot tr th {
+    cursor: pointer
+}
+
+.datepicker .datepicker-switch:hover,
+.datepicker .next:hover,
+.datepicker .prev:hover,
+.datepicker tfoot tr th:hover {
+    background: #eee
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.active,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled.disabled,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover,
+.datepicker table tr td.today.disabled:hover.active,
+.datepicker table tr td.today.disabled:hover.disabled,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today.disabled:hover:hover,
+.datepicker table tr td.today.disabled:hover[disabled],
+.datepicker table tr td.today.disabled[disabled],
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today:hover.disabled,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.today:hover:hover,
+.datepicker table tr td.today:hover[disabled],
+.datepicker table tr td.today[disabled],
+.datepicker table tr td.today.active,
+.datepicker table tr td.today.disabled.active,
+.datepicker table tr td.today.disabled:active,
+.datepicker table tr td.today.disabled:hover.active,
+.datepicker table tr td.today.disabled:hover:active,
+.datepicker table tr td.today:active,
+.datepicker table tr td.today:hover.active,
+.datepicker table tr td.today:hover:active,
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today.disabled,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled.disabled,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover,
+.datepicker table tr td.range.today.disabled:hover.active,
+.datepicker table tr td.range.today.disabled:hover.disabled,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today.disabled:hover:hover,
+.datepicker table tr td.range.today.disabled:hover[disabled],
+.datepicker table tr td.range.today.disabled[disabled],
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today:hover.disabled,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.range.today:hover:hover,
+.datepicker table tr td.range.today:hover[disabled],
+.datepicker table tr td.range.today[disabled],
+.datepicker table tr td.range.today.active,
+.datepicker table tr td.range.today.disabled.active,
+.datepicker table tr td.range.today.disabled:active,
+.datepicker table tr td.range.today.disabled:hover.active,
+.datepicker table tr td.range.today.disabled:hover:active,
+.datepicker table tr td.range.today:active,
+.datepicker table tr td.range.today:hover.active,
+.datepicker table tr td.range.today:hover:active,
+.datepicker table tr td.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active.disabled:hover[disabled],
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active:hover.disabled,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active:hover[disabled],
+.datepicker table tr td.active[disabled],
+.datepicker table tr td span.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled.disabled,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled:hover.disabled,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.disabled:hover:hover,
+.datepicker table tr td span.active.disabled:hover[disabled],
+.datepicker table tr td span.active.disabled[disabled],
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active:hover.disabled,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active:hover:hover,
+.datepicker table tr td span.active:hover[disabled],
+.datepicker table tr td span.active[disabled],
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active:hover:active {
+    background-color: $primary;
+    color: $white;
+}
+
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected.disabled,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled.disabled,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover,
+.datepicker table tr td.selected.disabled:hover.active,
+.datepicker table tr td.selected.disabled:hover.disabled,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected.disabled:hover:hover,
+.datepicker table tr td.selected.disabled:hover[disabled],
+.datepicker table tr td.selected.disabled[disabled],
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected:hover.disabled,
+.datepicker table tr td.selected:hover:active,
+.datepicker table tr td.selected:hover:hover,
+.datepicker table tr td.selected:hover[disabled],
+.datepicker table tr td.selected[disabled],
+.datepicker table tr td.selected.active,
+.datepicker table tr td.selected.disabled.active,
+.datepicker table tr td.selected.disabled:active,
+.datepicker table tr td.selected.disabled:hover.active,
+.datepicker table tr td.selected.disabled:hover:active,
+.datepicker table tr td.selected:active,
+.datepicker table tr td.selected:hover.active,
+.datepicker table tr td.selected:hover:active {
+    background-color: #f5f5f5;
+}
+
+.search-container {
+    position: relative;
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    input {
+        padding-right: 45px;
+    }
+}
+
+.file-upload-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1.5px solid $primary;
+    border-radius: 7.5px;
+    padding: 90px 30px;
+    font-size: 18px;
+    border-image-source: url('../img/dashed-border.png');
+    border-image-slice: 1;
+    border-image-repeat: round;
+    img {
+        width: 75px;
+        margin-bottom: 30px;
+    }
+    a {
+        color: $primary;
+    }
+}
+
+.form-error-notification {
+    display: flex;
+    border: 1px solid $primary;
+    background-color: $white;
+    min-height: 54px;
+    margin-bottom: 30px;
+    max-width: 320px;
+    .icon {
+        background-color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        img {
+            width: 5px;
+        }
+    }
+    .message {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        color: $primary;
+        
+    }
+}
+
+.custom-dropdown {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: #F9FAFF;
+    border: 1px solid #E0E7FF;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: $transition;
+    padding: 0px 15px;
+    padding-right: 45px;
+    height: 40px;
+    font-family: $fontFamily;
+    color: $fontColor;
+    font-size: 18px;
+    letter-spacing: 1px;
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+    }
+}
+
+.dropdown-options {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    left: 0;
+    width: 100%;
+    ul {
+        width: 100%;
+        margin-bottom: 0;
+        li {
+            width: 100%;
+            cursor: pointer;
+            background-color: $white;
+            padding: 20px 25px;
+            font-family: $fontFamilySecondary;
+            color: #030304;
+            text-transform: uppercase;
+            font-size: 26px;
+            transition: $transition;
+            &:not(:last-child) {
+                border-bottom: 1px solid #E2E2E2;
+            }
+            &:after {
+                transition: $transition;
+            }
+            &:hover {
+                background-color: $primary;
+                color: $white;
+                &:after {
+                    border-top: 15px solid $primary !important;
+                }
+            }
+        }
+    }
+}
+
+.custom-toggle-container {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    .switch {
+        position: relative;
+        display: inline-block;
+        margin-left: 15px;
+        & > span {
+            font-family: $fontFamily;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-55%);
+            pointer-events: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: $white;
+            text-transform: uppercase;
+            width: 50%;
+            font-weight: $fontBold;
+            text-align: center;
+            transition: $transition;
+            &.yes {
+                opacity: 0;
+                left: 0;
+                padding-left: 8px;
+            }
+            &.no {
+                opacity: 1;
+                right: 0;
+                padding-right: 4px;
+            }
+        }
+        input {
+            display: none;
+            &:checked {
+                & ~ .no {
+                    opacity: 0;
+                }
+                & ~ .yes {
+                    opacity: 1;
+                }
+                & + label {
+                    &:after {
+                        margin-left: 41px;
+                    }
+                    background: $primary;
+                    &:before {
+                        background: $primary;
+                    }
+                }
+            }
+            & + label {
+                width: 76px;
+                height: 35px;
+                background: $black;
+                border-radius: 19px;
+                display: block;
+                &:before, &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                }
+                &:before {
+                    top: 2px;
+                    left: 2px;
+                    bottom: 2px;
+                    right: 2px;
+                    background: $black;
+                    border-radius: 19px;
+                }
+                &:after {
+                    top: 4px;
+                    left: 4px;
+                    bottom: 4px;
+                    width: 27px;
+                    height: 27px;
+                    background-color: $white;
+                    border-radius: 50%;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	margin-bottom: $bottomMargin;
+	font-weight: $fontRegular;
+	font-family: $fontFamilySecondary;
+	text-transform: uppercase;
+}
+h1 {
+	font-size: $h1Size;
+	line-height: $h1LineHeight;
+}
+h2 {
+	font-size: $h2Size;
+	line-height: $h2LineHeight;
+}
+h3 {
+	font-size: $h3Size;
+	line-height: $h3LineHeight;
+}
+h4 {
+	font-size: $h4Size;
+	line-height: $h4LineHeight;
+}
+h5 {
+	font-size: $h5Size;
+	line-height: $h5LineHeight;
+}
+h6 {
+	font-size: $h6Size;
+	line-height: $h6LineHeight;
+}
+.main-heading {
+    font-size: $h1Size;
+    line-height: $h1LineHeight;
+    font-weight: $fontBold;
+    margin-bottom: 5px;
+}
+.full-width-header-with-borders {
+    font-size: 14px;
+    width: 100%;
+    border-top: 2px solid #F5F5F5;
+    border-bottom: 2px solid #F5F5F5;
+    padding: 20px 35px;
+    margin-bottom: 30px;
+}
+.sub-heading {
+    color: $secondary;
+    font-size: 14px;
+    font-weight: $fontBold;
+}
+p {
+	margin: 0;
+	margin-bottom: $bottomMargin;
+	line-height: $bodyFontLineHeight;
+	&.has-max-width {
+		max-width: 800px;
+	}
+	&.has-no-bottom-margin {
+		margin-bottom: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	transition: $transition;
+	color: $fontColor;
+	&:hover {
+		color: $primary;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.text-primary {
+	color: $primary;
+}
+
+.secondary-text {
+	color: $secondary;
+}
+
+.has-bottom-margin {
+	margin-bottom: $bottomMargin;
+}
+
+.bold {
+	font-weight: $fontBold;
+}
+
+.thin {
+	font-weight: $fontThin;
+}
