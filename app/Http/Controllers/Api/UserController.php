@@ -25,7 +25,7 @@ public function login(Request $request)
            if (Auth::attempt($data)) {
                $user = Auth::user();
                $success['token'] = $user->createToken('MyApp')->accessToken;
-               return response()->json(['success' => $success, $user], 200);
+               return response()->json(['success' => $success, 'user_data' => $user], 200);
            } else {
                return response()->json(['error' => 'Unauthorised'], 401);
            }
