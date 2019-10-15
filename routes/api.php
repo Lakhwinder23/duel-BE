@@ -2,15 +2,17 @@
 
 use Illuminate\Http\Request;
 
-
+Route::post('login', 'Api\UserController@login');
+Route::post('register', 'Api\UserController@register');
+Route::get('logout/{id}', 'Api\UserController@Logout');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 
-Route::post('login', 'DuelLoginController@authenticate');
+//Route::post('login', 'DuelLoginController@authenticate');
 
-Route::post('register', 'DuelLoginController@register');
+//Route::post('register', 'DuelLoginController@register');
 
 
 
@@ -74,7 +76,3 @@ Route::group(['as' => 'admin::'], function () {
     Route::get('matchmaking/edit/{id}', 'MatchController@edit');
     Route::post('matchmaking/edit/{id}', 'MatchController@update');
 });
-
-
-
-
