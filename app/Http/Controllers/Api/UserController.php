@@ -42,12 +42,29 @@ public function login(Request $request)
        if ($validator->fails()) {
            return response()->json(['error' => $validator->errors()], 401);
        }
+       if ($request['provider']) {
+           $provider = $request['provider'];
+           $provider_id = $request['provider_id'];
+       }
+       else {
+         $provider = '';
+         $provider_id = 0;
+       }
+
+       if($request['profile_picture']){
+         $profile_picture = $request['profile_picture'];
+       }
+       else {
+         $profile_picture = null;
+       }
+
        $user_id = User::create([
            'name' => $request['name'],
            'email' => $request['email'],
            'password' => bcrypt($request['password']),
-           'provider' => 'users',
-           'provider_id' => 0,
+           'provider' => $provider,
+           'provider_id' => $provider_id,
+           'profile_picture' => $profile_picture
        ]);
        //$admin = User::where('role', 2)->first();
        $success['token'] =  $user_id->createToken('MyApp')->accessToken;
