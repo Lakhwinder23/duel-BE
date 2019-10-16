@@ -2,7 +2,7 @@
 
 
 Auth::routes();
-
+//Auth::routes(['verify' => true]);
 //Route::get('/test', 'TestController@create');
 
 //Route::view('/{path?}', 'app');
@@ -65,3 +65,8 @@ Route::get('profile/transaction-history', 'ProfileController@transaction_history
 Route::get('profile/notifications', 'ProfileController@notifications');
 Route::get('profile/gamertags', 'ProfileController@gamertags');
 Route::get('profile/{username}', 'ProfileController@view');
+
+/**
+ * Password Reset Route(S)
+ */
+Route::post('/UserPasswordReset', 'Auth\ForgotPasswordController@sendResetLink');
